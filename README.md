@@ -30,3 +30,5 @@ This project was built using [gitdagray/build-chat-app](https://github.com/gitda
 - Public and private messaging: Users can send messages to everyone in the room or privately to specific users.
 - User activity indication: The application displays when users are typing in the chat room.
 - Room and user management: Users can join different chat rooms, and the application tracks active users in each room.
+
+![alt text](image.png)

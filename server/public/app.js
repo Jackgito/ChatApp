@@ -143,7 +143,6 @@ socket.on('roomList', ({ rooms }) => {
 
 // Enable the send button when the user joins a room
 socket.on('enterRoom', () => {
-  console.log('Entering')
   document.getElementById('sendButton').disabled = false;
 });
 

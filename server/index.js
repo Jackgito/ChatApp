@@ -38,6 +38,8 @@ io.on('connection', socket => {
 
     socket.on('enterRoom', ({ name, room }) => {
 
+      socket.emit('enterRoom');
+
         // leave previous room 
         const prevRoom = getUser(socket.id)?.room
 
