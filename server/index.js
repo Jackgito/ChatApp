@@ -17,6 +17,7 @@ const expressServer = app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
 })
 
+// Create object to store users
 const UsersState = {
     users: [],
     setUsers: function (newUsersArray) {
@@ -24,6 +25,7 @@ const UsersState = {
     }
 }
 
+// Create socket.io server
 const io = new Server(expressServer, {
     cors: {
         origin: process.env.NODE_ENV === "production" ? false : ["http://localhost:5500", "http://127.0.0.1:5500"]

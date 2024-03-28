@@ -10,6 +10,16 @@ const roomList = document.querySelector('.room-list')
 const chatDisplay = document.querySelector('.chat-display')
 const recipientSelect = document.querySelector('#recipient');
 
+function enterRoom(e) {
+  e.preventDefault()
+  if (nameInput.value && chatRoom.value) {
+      socket.emit('enterRoom', {
+          name: nameInput.value,
+          room: chatRoom.value
+      })
+  }
+}
+
 function sendMessage(e) {
   e.preventDefault();
   if (nameInput.value && msgInput.value && chatRoom.value) {
@@ -33,16 +43,6 @@ function sendMessage(e) {
     msgInput.value = '';
   }
   msgInput.focus();
-}
-
-function enterRoom(e) {
-    e.preventDefault()
-    if (nameInput.value && chatRoom.value) {
-        socket.emit('enterRoom', {
-            name: nameInput.value,
-            room: chatRoom.value
-        })
-    }
 }
 
 // Event listeners for sending messages and entering rooms
